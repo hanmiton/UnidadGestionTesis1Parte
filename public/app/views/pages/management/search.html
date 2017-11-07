@@ -1,0 +1,102 @@
+<div class="page-header">
+	<h1>Buscador</h1>
+</div>
+
+<br>
+
+
+<!-- INput for filter-->
+
+<div class="navbar-form">
+	<div class="form-group">
+		<input type="text" name="form-control" name="searchByUsername" placeholder="buscar por..." ng-model= "searchByUsername">
+	</div>
+	<button type="button" class= "btn btn-default"> Nombre de Usuario</button>
+</div>
+
+
+
+<div class="navbar-form">
+	<div class="form-group">
+		<input type="text" name="form-control" name="searchByEmail" placeholder="buscar por..." ng-model= "searchByEmail">
+	</div>
+	<button type="button" class= "btn btn-default">E-mail</button>
+</div>
+
+
+<div class="navbar-form">
+	<div class="form-group">
+		<input type="text" name="form-control" name="searchByName" placeholder="buscar por..." ng-model= "searchByName">
+	</div>
+	<button type="button" class= "btn btn-default"> Nombre</button>
+</div>
+
+<div class="navbar-form">
+	<button class="btn btn-default" type="button" ng-click="management.advancedSearch(searchByUsername, searchByEmail, searchByName);"> Busqueda</button>
+	<br>
+	<br>
+	<div class="btn-group">
+		<button type="button" class="btn btn-danger">Ordenar por</button>
+		<button type="button" class="btn btn-danger dropdown-toggle" data-toggle= "dropdown" aria-haspopup="true" aria-expanded="false">
+			<span class="caret"></span>
+			<span class="sr-only">Toggle Dropdown</span>
+		</button>
+		<ul class="dropdown-menu">
+			<li><a ng-click="management.sortOrder('username');" href="#"></a>Nombre de Usuario</li>
+
+			<li><a ng-click="management.sortOrder('E-mail');" href="#"></a>Correo</li>
+
+			<li><a ng-click="management.sortOrder('name');" href="#"></a>Nombre</li>
+
+		</ul>
+	</div>
+</div>
+
+
+<br>
+
+<div ng-show= "management.searchLimit === undefined">
+	<p><strong>Resultados: </strong> {{(management.users | filter: advancedSearchFilter | limitTo: management.searchLimit).length}}</p>
+</div>
+
+<div ng-show = "management.sort">
+	<p><strong>Ordenado por: </strong> {{ management.sort }}</p>
+</div>
+<!--custom error message -->
+
+<br>
+<br>
+
+
+
+<div class="panel-primary panel">
+	<div class="panel-heading">
+		<strong> Administración de Usuarios</strong>
+	</div>
+	<table class="table">
+		<tr>
+			<th>Name</th>
+			<th>Nombre Usuario</th>
+			<th>Correo</th>
+		</tr>
+		<tr ng-repeat = "person in management.users | filter: advancedSearchFilter | limitTo: management.searchLimit | orderBy: management.sort">
+			<td> {{ person.name }}</td>
+			<td> {{ person.username }}</td>
+			<td> {{ person.email }}</td>
+			<td>
+				<a href="/edit/ {{person._id}}">
+					<button type="button" ng-show="management.editAccess" class="btn-primary btn">Editar</button>
+				</a>
+					<button type= "button" ng-click= "management.deleteUser();" ng-show="management.deleteAccess" class="btn-danger btn">Eliminar</button>			
+			</td>
+		</tr>
+	</table>
+</div>
+
+<br>
+<br>
+
+<br>
+<br>
+
+
