@@ -10,7 +10,7 @@ module.exports = function(router){
 
 	var options = {
 	  auth: {
-	    api_user: 'hanmilton',
+	    api_user: 'hanmilton7',
 	    api_key: 'UnidadDeGestion777'
 	  }
 	}
