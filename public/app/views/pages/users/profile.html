@@ -22,7 +22,11 @@
 <!-- pokemon -->
 <div>
   <div class="page-header">
-    <pokemon-name></pokemon-name>
+	<h1>
+	  {{main.name}}
+	  <small>{{pokemon.species}}</small>
+	  <span class="label label-primary pull-right">#{{pokemon.id}}</span>
+	</h1>
   </div>
   <div class="row">
     <div class="col-md-6">
