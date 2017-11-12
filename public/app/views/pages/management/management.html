@@ -107,7 +107,11 @@
                 <ul class="list-group">
                   <li class="list-group-item">
                     <strong>Tipo</strong>
-                    <span class="pull-right">{{main.ingeniero.tipo.join(', ')}}</span>
+                    <span class="pull-right">
+                      <span class="label type type-{{type | lowercase}}" ng-repeat="type in main.ingeniero.tipo">
+                        {{type}}
+                      </span>
+                    </span>
                   </li>
                   <li class="list-group-item">
                     <strong>Edad</strong>
@@ -119,7 +123,11 @@
                   </li>
                   <li class="list-group-item">
                     <strong>Habilidades</strong>
-                    <span class="pull-right">{{main.ingeniero.habilidades.join(', ')}}</span>
+                      <ul>
+                        <li ng-repeat="ability in main.ingeniero.habilidades">
+                          {{ability}}
+                        </li>
+                      </ul>
                   </li>
                 </ul>
               </div>
