@@ -19,9 +19,6 @@ body {
   margin-bottom: 10px;
 }
 
-.form-group {
-  padding: 10px;
-}
 
 .type {
   margin-left: 1px;
@@ -32,130 +29,88 @@ body {
   border: solid 1px #6d6d4e;
 }
 
-.type-fire {
+.type-tipo1 {
   background-color: #f08030;
   border: solid 1px #9c531f;
 }
 
-.type-fighting {
+.type-tipo2 {
   background-color: #c03028;
   border: solid 1px #7d1f1a;
 }
 
-.type-water {
+.type-tipo3 {
   background-color: #6890f0;
   border: solid 1px #445e9c;
 }
 
-.type-flying {
+.type-tipo4 {
   background-color: #a890f0;
   border: solid 1px #6d5e9c;
 }
 
-.type-grass {
+.type-tipo5 {
   background-color: #78c850;
   border: solid 1px #4e8234;
 }
 
-.type-poison {
+.type-tipo6 {
   background-color: #a040a0;
   border: solid 1px #c183c1;
 }
 
-.type-electric {
+.type-tipo7 {
   background-color: #f8d030;
   border: solid 1px #a1871f;
 }
 
-.type-ground {
+.type-tipo8 {
   background-color: #e0c068;
   border: solid 1px #927d44;
 }
 
-.type-psychic {
+.type-tipo9 {
   background-color: #f85888;
   border: solid 1px #a13959;
 }
 
-.type-rock {
+.type-tipo10 {
   background-color: #b8a038;
   border: solid 1px #786824;
 }
 
-.type-ice {
+.type-tipo11 {
   background-color: #98d8d8;
   border: solid 1px #638d8d;
 }
 
-.type-bug {
+.type-tipo12 {
   background-color: #a8b820;
   border: solid 1px #6d7815;
 }
 
-.type-dragon {
+.type-tipo13 {
   background-color: #7038f8;
   border: solid 1px #4924a1;
 }
 
-.type-ghost {
+.type-tipo14 {
   background-color: #705898;
   border: solid 1px #493963;
 }
 
-.type-dark {
+.type-tipo15 {
   background-color: #705848;
   border: solid 1px #49392f;
 }
 
-.type-steel {
+.type-tipo16 {
   background-color: #b8b8d0;
   border: solid 1px #787887;
 }
 
-.type-fairy {
+.type-tipo17 {
   background-color: #ee99ac;
   border: solid 1px #9b6470;
-}
-
-.ng-invalid.ng-dirty {
-  border-color: #D9230F;
-}
-
-.ng-valid.ng-dirty {
-  border-color: #468847;
-}
-
-.pokemon {
-  height: 350px;
-}
-
-.pokemon h1 {
-  margin: 0;
-  color: #fff;
-  font-size: 18px;
-}
-
-.pokemon h1 > small {
-  color: #ccc;
-}
-
-.pokemon img {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  max-width: 200px;
-  max-height: 220px;
-}
-
-.pokemon .panel-body {
-  position: relative;
-  height: 250px;
-}
-
-.pokemon pokemon-type {
-  font-size: 22px;
 }
 
