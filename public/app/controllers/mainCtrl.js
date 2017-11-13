@@ -27,14 +27,6 @@ angular.module('mainController',['authServices', 'userServices'])
       evolution: [ "Ingeniero", "Masterado", "Doctorado" ]
     };
 
-    this.selectTab = function (tab) {
-      this.tab = tab;
-    };
-    
-
-
-
-
 
  	app.loadme = false;
 
@@ -226,6 +218,16 @@ angular.module('mainController',['authServices', 'userServices'])
 	app.logout = function() {
 		showModal(2);
 	};
+
+	app.controller('TabsController', function () {
+    this.tab = 1;
+
+    this.selectTab = function (tab) {
+      this.tab = tab;
+    };
+
+  });
+	
 });
 	
 	

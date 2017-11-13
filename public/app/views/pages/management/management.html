@@ -81,15 +81,15 @@
           <div class="col-md-6">
             <img class="avatar center-block" ng-src="app/assets/img/ingenieros/{{main.ingeniero.name | lowercase}}.png">
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6" ng-controller="TabsController as tabs">
             <ul class="nav nav-tabs nav-justified">
-              <li ng-class="{ active:main.tab === 1 }"><a href="#" ng-click="main.selectTab(1)">Ingenierias</a></li>
-              <li ng-class="{ active:main.tab === 2 }"><a href="#" ng-click="main.selectTab(2)">Estadisticas</a></li>
-              <li ng-class="{ active:main.tab === 3 }"><a href="#" ng-click="main.selectTab(3)">Evolución</a></li>
+               <li ng-class="{ active:tabs.tab === 1 }"><a href="#" ng-click="tabs.selectTab(1)">Ingenierias</a></li>
+              <li ng-class="{ active:tabs.tab === 2 }"><a href="#" ng-click="tabs.selectTab(2)">Estadisticas</a></li>
+              <li ng-class="{ active:tabs.tab === 3 }"><a href="#" ng-click="tabs.selectTab(3)">Evolucion</a></li>
             </ul>
             <div class="tab-content">
             <!-- Ingenierias -->
-              <div ng-show="main.tab === 1">
+              <div ng-show="tabs.tab === 1">
                 <ul class="list-group">
                   <li class="list-group-item">
                     <strong>Tipo</strong>
@@ -119,7 +119,7 @@
               </div>
 				<!--Estadisticas-->
               <!-- Stats -->
-              <div ng-show="main.tab === 2">
+              <div ng-show="tabs.tab === 2">
                 <ul class="list-group">
                   <li class="list-group-item">
                     <strong>Estadistica1</strong>
@@ -152,7 +152,7 @@
                 </ul>
               </div>
                <!-- Evolucion -->
-              <div ng-show="main.tab === 3">
+              <div ng-show="tabs.tab === 3">
                 <div class="text-center" ng-repeat="ingeniero in main.ingeniero.evolution">
                   <a href="#">
                     <img src="app/assets/img/ingenieros/{{ingeniero | lowercase}}.jpg" width="160">
