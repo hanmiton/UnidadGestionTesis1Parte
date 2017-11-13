@@ -103,6 +103,7 @@
               <li><a href="#">Evolución</a></li>
             </ul>
             <div class="tab-content">
+            <!-- Ingenierias -->
               <div>
                 <ul class="list-group">
                   <li class="list-group-item">
@@ -131,7 +132,54 @@
                   </li>
                 </ul>
               </div>
+				<!--Estadisticas-->
+              <!-- Stats -->
+              <div>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <strong>Estadistica1</strong>
+                    <span class="badge">{{main.ingeniero.stats.st1}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Estadistica2</strong>
+                    <span class="badge">{{main.ingeniero.stats.st2}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Estadistica3</strong>
+                    <span class="badge">{{main.ingeniero.stats.st3}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Estadistica4</strong>
+                    <span class="badge">{{main.ingeniero.stats['sp.st4']}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Estadistica5</strong>
+                    <span class="badge">{{main.ingeniero.stats['sp.st5']}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Estadistica6</strong>
+                    <span class="badge">{{main.ingeniero.stats.st6}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Total</strong>
+                    <span class="badge">{{main.ingeniero.stats.total}}</span>
+                  </li>
+                </ul>
+              </div>
+               <!-- Evolucion -->
+              <div>
+                <div class="text-center" ng-repeat="ingeniero in main.ingeniero.evolution">
+                  <a href="#">
+                    <img src="app/assets/img/ingenieros/{{ingeniero | lowercase}}.jpg" width="160">
+                    <p>
+                      <strong>{{ingeniero}}</strong>
+                    </p>
+                  </a>
+                  <span ng-hide="$last" class="glyphicon glyphicon-arrow-down"></span>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
