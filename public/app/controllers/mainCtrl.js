@@ -233,7 +233,7 @@ angular.module('mainController',['authServices', 'userServices'])
 
 .filter('imageify', function () {
     return function (input) {
-      var url = "app/assets/img/ingenieros/" + input.toLowerCase() + ".jpg";
+      var url = "assets/img/ingenieros/" + input.toLowerCase() + ".jpg";
       return url;
     };
   });
