@@ -229,6 +229,13 @@ angular.module('mainController',['authServices', 'userServices'])
       this.tab = tab;
     };
 
+  })
+
+.filter('imageify', function () {
+    return function (input) {
+      var url = "app/assets/img/ingenieros/" + input.toLowerCase() + ".jpg";
+      return url;
+    };
   });
 
 	
