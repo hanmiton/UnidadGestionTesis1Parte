@@ -18,7 +18,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background-color: white;
-  overflow: hidden;
+  overflow-x: hidden;
+   overflow-y: auto;
 }
 
 .dizzy-gillespie {
