@@ -219,7 +219,10 @@ angular.module('mainController',['authServices', 'userServices'])
 		showModal(2);
 	};
 
-	app.controller('TabsController', function () {
+
+})
+
+.controller('TabsController', function () {
     this.tab = 1;
 
     this.selectTab = function (tab) {
@@ -227,7 +230,6 @@ angular.module('mainController',['authServices', 'userServices'])
     };
 
   });
-	
-});
+
 	
 	
