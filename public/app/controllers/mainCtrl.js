@@ -4,7 +4,8 @@ angular.module('mainController',['authServices', 'userServices'])
 	//console.log('hanmilton')
 	var app = this;
  	
-
+	//funcion de tabs
+	this.tab = 1;
 	//nuevo codigo admin ingeniero
 	this.ingeniero = {
       id: "001",
@@ -26,6 +27,10 @@ angular.module('mainController',['authServices', 'userServices'])
       evolution: [ "Ingeniero", "Masterado", "Doctorado" ]
     };
 
+    this.selectTab = function (tab) {
+      this.tab = tab;
+    };
+    
 
 
 
