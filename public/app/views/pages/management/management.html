@@ -79,7 +79,7 @@
         </div>
         <div class="row">
           <div class="col-md-6">
-            <img class="avatar center-block" src="{{main.ingeniero.name | imageify}}">
+            <img class="avatar center-block" ng-src="app/assets/img/ingenieros/{{main.ingeniero.name | lowercase}}.png">
           </div>
           <div class="col-md-6" ng-controller="TabsController as tabs">
             <ul class="nav nav-tabs nav-justified">
@@ -155,7 +155,7 @@
               <div ng-show="tabs.tab === 3">
                 <div class="text-center" ng-repeat="ingeniero in main.ingeniero.evolution">
                   <a href="#">
-                   <img src="{{ingeniero | imageify}}" width="160">
+                    <img src="app/assets/img/ingenieros/{{ingeniero | lowercase}}.jpg" width="160">
                     <p>
                       <strong>{{ingeniero}}</strong>
                     </p>
