@@ -254,6 +254,13 @@ angular.module('mainController',['authServices', 'userServices'])
 
   })
 
+.directive('ingenieroName', function () {
+    return {
+      restrict: 'E',
+      templateUrl: '../partials/ingeniero-name.html'
+    };
+  })
+
 
 
 
