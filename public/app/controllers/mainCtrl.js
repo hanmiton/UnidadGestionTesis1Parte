@@ -197,6 +197,81 @@ angular.module('mainController',['authServices', 'userServices'])
 	app.logout = function() {
 		showModal(2);
 	};
+
+
+})
+
+
+
+.directive('ingenieroSolicitudes', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'app/partials/ingeniero-solicitudes.html',
+      controller: function () {
+         this.solicitudes = [];
+          this.solicitud = {};
+          this.show = false;
+
+          this.toggle = function () {
+            this.show = !this.show;
+          };
+
+          this.anonymousChanged = function () {
+            if (this.solicitud.anonymous) {
+              this.solicitud.email = "";
+            }
+          };
+
+          this.addSolicitud = function () {
+            this.solicitud.date = Date.now();
+            this.solicitudes.push(this.solicitud);
+            this.solicitud = {};
+        };
+      },
+      controllerAs: 'sltsCtrl'
+    };
+  })
+.directive('ingenieroName', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'app/partials/ingeniero-name.html'
+    };
+  })
+
+.directive('ingenieroImage', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'app/partials/ingeniero-image.html'
+    };
+  })
+
+.directive('ingenieroData', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'app/partials/ingeniero-data.html'
+    }
+  })
+
+.directive('ingenieroStats', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'app/partials/ingeniero-stats.html'
+    };
+  })
+
+.directive('ingenieroEvolution', function () {
+    return {
+      retrict: 'E',
+      templateUrl: 'app/partials/ingeniero-evolution.html'
+    };
+  })
+
+
+.filter('imageify', function () {
+    return function (input) {
+      var url = "app/assets/img/ingenieros/" + input.toLowerCase() + ".jpg";
+      return url;
+    };
   });
 
 	
