@@ -234,7 +234,7 @@ angular.module('mainController',['authServices', 'userServices'])
 .directive('ingenieroSolicitudes', function () {
     return {
       restrict: 'E',
-      templateUrl: 'partials/ingeniero-solicitudes.html',
+      templateUrl: 'app/partials/ingeniero-solicitudes.html',
       controller: function () {
          this.solicitudes = [];
           this.solicitud = {};
