@@ -1,4 +1,4 @@
-angular.module('mainController',['authServices', 'userServices'])
+angular.module('mainController',['authServices', 'userServices','ingedex.controllers'])
 
 .controller('mainCtrl', function(Auth, $location, $timeout, $rootScope, $window, $interval, $route, User, AuthToken){
 	//console.log('hanmilton')
