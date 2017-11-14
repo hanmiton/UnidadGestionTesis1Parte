@@ -230,7 +230,8 @@ angular.module('mainController',['authServices', 'userServices'])
     };
 
   })
-controller('SolicitudesController', function () {
+
+.controller('SolicitudesController', function () {
     this.solicitudes = [];
     this.solicitud = {};
     this.show = false;
