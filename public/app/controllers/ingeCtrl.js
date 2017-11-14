@@ -1,6 +1,7 @@
+
 angular.module('ingedex.controllers', [])
 
-  .controller('IngenieroController', function () {
+.controller('IngenieroController', function () {
       this.ingeniero = {
         id: "001",
         name: "Nombre001",
@@ -30,4 +31,3 @@ angular.module('ingedex.controllers', [])
         this.tab = tab;
     };
 });
-
