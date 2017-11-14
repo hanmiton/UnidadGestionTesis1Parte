@@ -261,7 +261,33 @@ angular.module('mainController',['authServices', 'userServices'])
     };
   })
 
+.directive('ingenieroImage', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'app/partials/ingeniero-image.html'
+    };
+  })
 
+.directive('ingenieroData', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'app/partials/ingeniero-data.html'
+    }
+  })
+
+.directive('ingenieroStats', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'app/partials/ingeniero-stats.html'
+    };
+  })
+
+.directive('ingenieroEvolution', function () {
+    return {
+      retrict: 'E',
+      templateUrl: 'app/partials/ingeniero-evolution.html'
+    };
+  })
 
 
 .filter('imageify', function () {
