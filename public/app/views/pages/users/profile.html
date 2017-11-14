@@ -162,8 +162,26 @@
                     
                 </div>
               </form>
+              <blockquote>
+                <p>{{sltsCtrl.solicitud.date}}</p>
+                <p>{{sltsCtrl.solicitud.titulo}}</p>
+                <p>{{sltsCtrl.solicitud.para}}</p>
+                <p>{{sltsCtrl.solicitud.cargo}}</p> 
+                <p>Presente.-</p> 
+                <p>Yo, {{sltsCtrl.solicitud.nombre}} con cédula de ciudadanía {{sltsCtrl.solicitud.ci}}, egresado de la carrera de {{sltsCtrl.solicitud.facultad}}, solicito a usted muy comedidamente se me {{sltsCtrl.solicitud.body}}</p> 
+                <p>Por la atención prestada al a presente, anticipo mis agradecimientos</p>
+                <p>Atentamente</p>
+                <p>{{sltsCtrl.solicitud.nombre}}</p> 
+                <p>{{sltsCtrl.solicitud.ci}}</p> 
+                <footer>
+                  Solicitud por 
+                  <a ng-if="!sltsCtrl.solicitud.anonymous" href="mailto:{{sltsCtrl.solicitud.email}}">{{sltsCtrl.solicitud.email}}</a> 
+                  <em ng-if="sltsCtrl.solicitud.anonymous">Anonymous</em> en <span>{{sltsCtrl.solicitud.date}}</span>
+                </footer>
+              </blockquote>
+
               <blockquote ng-repeat="solicitud in sltsCtrl.solicitudes">
-                <p>{{solicitud.date}}</p>
+                <p>Quito, {{solicitud.date | date : 'medium'}}</p>
                 <p>{{solicitud.titulo}}</p>
                 <p>{{solicitud.para}}</p>
                 <p>{{solicitud.cargo}}</p> 
@@ -176,13 +194,7 @@
                 <footer>
                   Solicitud por 
                   <a ng-if="!solicitud.anonymous" href="mailto:{{solicitud.email}}">{{solicitud.email}}</a> 
-                  <em ng-if="solicitud.anonymous">Anonymous</em> en <span>{{solicitud.date}}</span>
-                </footer>
-              </blockquote>
-              <blockquote>
-                <p>Solicitud para una maestria en cuenca</p>
-                <footer>
-                  Solicitud by <em>Anonymous</em> on <span>Feb 12, 2016, 11:00:00 PM</span>
+                  <em ng-if="solicitud.anonymous">Anonymous</em> en <span>{{solicitud.date | date : 'medium'}}</span>
                 </footer>
               </blockquote>
             </div>

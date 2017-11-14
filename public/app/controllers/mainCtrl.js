@@ -247,9 +247,10 @@ angular.module('mainController',['authServices', 'userServices'])
     };
 
     this.addSolicitud = function () {
+      this.solicitud.date = Date.now();
       this.solicitudes.push(this.solicitud);
+      this.solicitud = {};
     };
-
 
   })
 
