@@ -117,7 +117,7 @@
                <h1 class="panel-title">Solicitudes <button class="close pull-right" ng-click="sltsCtrl.toggle()">&times;</button></h1>
             </div>
             <div class="panel-body">
-              <form name="solicitudesForm" class="form-horizontal" role="form" ng-submit="sltsCtrl.addSolicitud()" novalidate>
+              <form name="solicitudesForm" class="form-horizontal" role="form" ng-submit="solicitudesForm.$valid && sltsCtrl.addSolicitud()" novalidate>
                 <div class="form-group">
                   <strong class="col-sm-12">De:</strong>
                   <div class="col-sm-4">
