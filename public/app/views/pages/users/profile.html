@@ -109,45 +109,47 @@
           </div>
           <!-- /tabs -->
         </div>
-        <!-- solicitud -->
-        <button class="btn btn-primary">Mostrar Solicitudes <span class="badge">2</span></button>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h1 class="panel-title">Solicitudes <button class="close pull-right">&times;</button></h1>
-          </div>
-          <div class="panel-body">
-            <form class="form-horizontal" role="form">
-              <div class="form-group">
-                <div class="col-sm-6">
-                  <textarea placeholder="Please tell us what you think about {{ingCtrl.ingeniero.name}}" class="form-control"></textarea>
+         <!-- solicitud -->
+        <div ng-controller="SolicitudesController as sltsCtrl">
+          <button class="btn btn-primary" ng-hide="sltsCtrl.show" ng-click="sltsCtrl.toggle()">Mostrar Solicitudes <span class="badge">{{sltsCtrl.solicitudes.length}}</span></button>
+          <div class="panel panel-primary" ng-show="sltsCtrl.show">
+            <div class="panel-heading">
+               <h1 class="panel-title">Solicitudes <button class="close pull-right" ng-click="sltsCtrl.toggle()">&times;</button></h1>
+            </div>
+            <div class="panel-body">
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <div class="col-sm-6">
+                    <textarea placeholder="Please tell us what you think about {{ingCtrl.ingeniero.name}}" class="form-control"></textarea>
+                  </div>
+                  <div class="col-sm-4">
+                    <input type="email" placeholder="Please enter your email address" class="form-control">
+                    <label>
+                      <input id="anonymous" type="checkbox">
+                      Anonymous
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                    <button class="btn btn-lg">Solicitud</button>
+                  </div>
                 </div>
-                <div class="col-sm-4">
-                  <input type="email" placeholder="Please enter your email address" class="form-control">
-                  <label>
-                    <input id="anonymous" type="checkbox">
-                    Anonymous
-                  </label>
-                </div>
-                <div class="col-sm-2">
-                  <button class="btn btn-lg">Solicitud</button>
-                </div>
-              </div>
-            </form>
-            <blockquote>
-              <p>Solicitud para una maestria en el exteior</p>
-              <footer>
-                Solicitud by <a href="mailto:pepe@pepe.com">pepe@pepe.com</a> on <span>Feb 12, 2016, 11:00:00 PM</span>
-              </footer>
-            </blockquote>
-            <blockquote>
-              <p>Solicitud para una maestria en cuenca</p>
-              <footer>
-                Solicitud by <em>Anonymous</em> on <span>Feb 12, 2016, 11:00:00 PM</span>
-              </footer>
-            </blockquote>
+              </form>
+              <blockquote>
+                <p>Solicitud para una maestria en el exteior</p>
+                <footer>
+                  Solicitud by <a href="mailto:pepe@pepe.com">pepe@pepe.com</a> on <span>Feb 12, 2016, 11:00:00 PM</span>
+                </footer>
+              </blockquote>
+              <blockquote>
+                <p>Solicitud para una maestria en cuenca</p>
+                <footer>
+                  Solicitud by <em>Anonymous</em> on <span>Feb 12, 2016, 11:00:00 PM</span>
+                </footer>
+              </blockquote>
+            </div>
           </div>
         </div>
-        <!-- /solicitud -->
+          <!-- /solicitud -->
       </div>
       <!-- /ingeniero -->
     </div>

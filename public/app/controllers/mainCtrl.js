@@ -230,6 +230,15 @@ angular.module('mainController',['authServices', 'userServices'])
     };
 
   })
+.controller('SolicitudesController', function () {
+    this.solicitudes = [];
+    this.show = false;
+
+    this.toggle = function () {
+      this.show = !this.show;
+    };
+
+  })
 
 .filter('imageify', function () {
     return function (input) {
