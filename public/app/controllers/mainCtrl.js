@@ -254,11 +254,39 @@ angular.module('mainController',['authServices', 'userServices'])
 
   })
 
+.directive('ingenieroName', function () {
+    return {
+      restrict: 'E',
+      templateUrl: '../partials/ingeniero-name.html'
+    };
+  })
+
+.directive('ingenieroImage', function () {
+    return {
+      restrict: 'E',
+      templateUrl: '../partials/ingeniero-image.html'
+    };
+  })
+
 .directive('ingenieroData', function () {
     return {
       restrict: 'E',
       templateUrl: '../partials/ingeniero-data.html'
     }
+  })
+
+.directive('ingenieroStats', function () {
+    return {
+      restrict: 'E',
+      templateUrl: '../partials/ingeniero-stats.html'
+    };
+  })
+
+.directive('ingenieroEvolution', function () {
+    return {
+      retrict: 'E',
+      templateUrl: '../partials/ingeniero-evolution.html'
+    };
   })
 
 

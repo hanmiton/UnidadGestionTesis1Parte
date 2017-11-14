@@ -1,0 +1,9 @@
+<div class="text-center" ng-repeat="ingeniero in main.ingeniero.evolution">
+  <a href="#">
+    <img src="app/assets/img/ingenieros/{{ingeniero | lowercase}}.jpg" width="160">
+    <p>
+      <strong>{{ingeniero}}</strong>
+    </p>
+  </a>
+  <span ng-hide="$last" class="glyphicon glyphicon-arrow-down"></span>
+</div>
