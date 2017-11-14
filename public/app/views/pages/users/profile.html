@@ -121,40 +121,39 @@
                 <div class="form-group">
                   <strong class="col-sm-12">De:</strong>
                   <div class="col-sm-4">
-                    <textarea ng-model="comment.nombre"placeholder="Ingrese Nombre Completo" class="form-control"></textarea>
+                    <textarea ng-model="sltsCtrl.solicitud.nombre"placeholder="Ingrese Nombre Completo" class="form-control"></textarea>
                   </div>
                   <div class="col-sm-4">
-                    <textarea ng-model="comment.ci"placeholder="C.I:" class="form-control"></textarea>
+                    <textarea ng-model="sltsCtrl.solicitud.ci"placeholder="C.I:" class="form-control"></textarea>
                   </div>
                    <div class="col-sm-4">
-                    <textarea ng-model="comment.facultad"placeholder="Facultad:" class="form-control"></textarea>
+                    <textarea ng-model="sltsCtrl.solicitud.facultad"placeholder="Facultad:" class="form-control"></textarea>
                   </div>
                   <div class="col-sm-4">
-                    <input ng-model="comment.email"type="email" placeholder="Please enter your email address" class="form-control">
                     <label>
-                      <input ng-model="comment.email" ng-disabled="comment.anonymous" type="email" placeholder="Please enter your email address" class="form-control">
+                      <input ng-model="sltsCtrl.solicitud.email" ng-disabled="sltsCtrl.solicitud.anonymous" type="email" placeholder="Please enter your email address" class="form-control">
                       <label>
-                      <input ng-model="comment.anonymous" type="checkbox">
-                      Anonymous
+                        <input ng-model="sltsCtrl.solicitud.anonymous"ng-change="sltsCtrl.anonymousChanged()"type="checkbox">
+                        Anonymous
                     </label>
                   </div>
                   </div>
                   <div class="form-group">
                      <strong class="col-sm-12">Para:</strong>
                     <div class="col-sm-4">
-                      <textarea ng-model="comment.titulo"placeholder="Ingrese Titulo" class="form-control"></textarea>
+                      <textarea ng-model="sltsCtrl.solicitud.titulo"placeholder="Ingrese Titulo" class="form-control"></textarea>
                     </div>
                     <div class="col-sm-4">
-                      <textarea ng-model="comment.para"placeholder="Para:" class="form-control"></textarea>
+                      <textarea ng-model="sltsCtrl.solicitud.para"placeholder="Para:" class="form-control"></textarea>
                     </div>
                     <div class="col-sm-4">
-                      <textarea ng-model="comment.cargo"placeholder="Cargo:" class="form-control"></textarea>
+                      <textarea ng-model="sltsCtrl.solicitud.cargo"placeholder="Cargo:" class="form-control"></textarea>
                     </div>
                   </div>
                   <div class="form-group">
                     <strong class="col-sm-12">Motivo:</strong>
                     <div class="col-sm-6">
-                      <textarea ng-model="comment.body"placeholder="Motivo Solicitud" class="form-control"></textarea>
+                      <textarea ng-model="sltsCtrl.solicitud.body"placeholder="Motivo Solicitud" class="form-control"></textarea>
                     </div>
                     <div class="col-sm-2">
                       <button class="btn btn-lg">Solicitud</button>
@@ -164,20 +163,20 @@
                 </div>
               </form>
               <blockquote>
-                <p>{{comment.date}}</p>
-                <p>{{comment.titulo}}</p>
-                <p>{{comment.para}}</p>
-                <p>{{comment.cargo}}</p> 
+                <p>{{sltsCtrl.solicitud.date}}</p>
+                <p>{{sltsCtrl.solicitud.titulo}}</p>
+                <p>{{sltsCtrl.solicitud.para}}</p>
+                <p>{{sltsCtrl.solicitud.cargo}}</p> 
                 <p>Presente.-</p> 
-                <p>Yo, {{comment.nombre}} con cédula de ciudadanía {{comment.ci}}, egresado de la carrera de {{comment.facultad}}, solicito a usted muy comedidamente se me {{comment.body}}</p> 
+                <p>Yo, {{sltsCtrl.solicitud.nombre}} con cédula de ciudadanía {{sltsCtrl.solicitud.ci}}, egresado de la carrera de {{sltsCtrl.solicitud.facultad}}, solicito a usted muy comedidamente se me {{sltsCtrl.solicitud.body}}</p> 
                 <p>Por la atención prestada al a presente, anticipo mis agradecimientos</p>
                 <p>Atentamente</p>
-                <p>{{comment.nombre}}</p> 
-                <p>{{comment.ci}}</p> 
+                <p>{{sltsCtrl.solicitud.nombre}}</p> 
+                <p>{{sltsCtrl.solicitud.ci}}</p> 
                 <footer>
                   Solicitud por 
-                  <a ng-if="!comment.anonymous" href="mailto:{{comment.email}}">{{comment.email}}</a> 
-                  <em ng-if="comment.anonymous">Anonymous</em> en <span>{{comment.date}}</span>
+                  <a ng-if="!sltsCtrl.solicitud.anonymous" href="mailto:{{sltsCtrl.solicitud.email}}">{{sltsCtrl.solicitud.email}}</a> 
+                  <em ng-if="sltsCtrl.solicitud.anonymous">Anonymous</em> en <span>{{sltsCtrl.solicitud.date}}</span>
                 </footer>
               </blockquote>
               <blockquote>
@@ -190,7 +189,7 @@
           </div>
         </div>
           <!-- /solicitud -->
-               </div>
+           </div>
       <!-- /ingeniero -->
     </div>
 
