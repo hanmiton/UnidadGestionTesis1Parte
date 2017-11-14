@@ -132,8 +132,10 @@
                   <div class="col-sm-4">
                     <input ng-model="comment.email"type="email" placeholder="Please enter your email address" class="form-control">
                     <label>
-                      <input ng-model="comment.anonymous" id="anonymous" type="checkbox">
-                      No mail
+                      <input ng-model="comment.email" ng-disabled="comment.anonymous" type="email" placeholder="Please enter your email address" class="form-control">
+                      <label>
+                      <input ng-model="comment.anonymous" type="checkbox">
+                      Anonymous
                     </label>
                   </div>
                   </div>
@@ -173,7 +175,9 @@
                 <p>{{comment.nombre}}</p> 
                 <p>{{comment.ci}}</p> 
                 <footer>
-                  Solicitud por <a href="mailto:{{comment.email}}">{{comment.email}}</a> on <span>{{comment.date}}</span>
+                  Solicitud por 
+                  <a ng-if="!comment.anonymous" href="mailto:{{comment.email}}">{{comment.email}}</a> 
+                  <em ng-if="comment.anonymous">Anonymous</em> en <span>{{comment.date}}</span>
                 </footer>
               </blockquote>
               <blockquote>
@@ -186,7 +190,6 @@
           </div>
         </div>
           <!-- /solicitud -->
-
                </div>
       <!-- /ingeniero -->
     </div>
