@@ -230,7 +230,7 @@ angular.module('mainController',['authServices', 'userServices'])
     };
 
   })
-.controller('SolicitudesController', function () {
+controller('SolicitudesController', function () {
     this.solicitudes = [];
     this.solicitud = {};
     this.show = false;
@@ -244,6 +244,11 @@ angular.module('mainController',['authServices', 'userServices'])
         this.solicitud.email = "";
       }
     };
+
+    this.addSolicitud = function () {
+      this.solicitudes.push(this.solicitud);
+    };
+
 
   })
 

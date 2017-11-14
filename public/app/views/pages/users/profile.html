@@ -109,7 +109,7 @@
           </div>
           <!-- /tabs -->
         </div>
-        	<!-- solicitud -->
+        <!-- solicitud -->
         <div ng-controller="SolicitudesController as sltsCtrl">
           <button class="btn btn-primary" ng-hide="sltsCtrl.show" ng-click="sltsCtrl.toggle()">Mostrar Solicitudes <span class="badge">{{sltsCtrl.solicitudes.length}}</span></button>
           <div class="panel panel-primary" ng-show="sltsCtrl.show">
@@ -117,7 +117,7 @@
                <h1 class="panel-title">Solicitudes <button class="close pull-right" ng-click="sltsCtrl.toggle()">&times;</button></h1>
             </div>
             <div class="panel-body">
-              <form class="form-horizontal" role="form">
+              <form class="form-horizontal" role="form" ng-submit="sltsCtrl.addSolicitud()">
                 <div class="form-group">
                   <strong class="col-sm-12">De:</strong>
                   <div class="col-sm-4">
@@ -156,27 +156,27 @@
                       <textarea ng-model="sltsCtrl.solicitud.body"placeholder="Motivo Solicitud" class="form-control"></textarea>
                     </div>
                     <div class="col-sm-2">
-                      <button class="btn btn-lg">Solicitud</button>
+                      <button type="submit" class="btn btn-lg">Solicitud</button>
                     </div>
                   </div>
                     
                 </div>
               </form>
-              <blockquote>
-                <p>{{sltsCtrl.solicitud.date}}</p>
-                <p>{{sltsCtrl.solicitud.titulo}}</p>
-                <p>{{sltsCtrl.solicitud.para}}</p>
-                <p>{{sltsCtrl.solicitud.cargo}}</p> 
+              <blockquote ng-repeat="solicitud in sltsCtrl.solicitudes">
+                <p>{{solicitud.date}}</p>
+                <p>{{solicitud.titulo}}</p>
+                <p>{{solicitud.para}}</p>
+                <p>{{solicitud.cargo}}</p> 
                 <p>Presente.-</p> 
-                <p>Yo, {{sltsCtrl.solicitud.nombre}} con cédula de ciudadanía {{sltsCtrl.solicitud.ci}}, egresado de la carrera de {{sltsCtrl.solicitud.facultad}}, solicito a usted muy comedidamente se me {{sltsCtrl.solicitud.body}}</p> 
+                <p>Yo, {{solicitud.nombre}} con cédula de ciudadanía {{solicitud.ci}}, egresado de la carrera de {{solicitud.facultad}}, solicito a usted muy comedidamente se me {{solicitud.body}}</p> 
                 <p>Por la atención prestada al a presente, anticipo mis agradecimientos</p>
                 <p>Atentamente</p>
-                <p>{{sltsCtrl.solicitud.nombre}}</p> 
-                <p>{{sltsCtrl.solicitud.ci}}</p> 
+                <p>{{solicitud.nombre}}</p> 
+                <p>{{solicitud.ci}}</p> 
                 <footer>
                   Solicitud por 
-                  <a ng-if="!sltsCtrl.solicitud.anonymous" href="mailto:{{sltsCtrl.solicitud.email}}">{{sltsCtrl.solicitud.email}}</a> 
-                  <em ng-if="sltsCtrl.solicitud.anonymous">Anonymous</em> en <span>{{sltsCtrl.solicitud.date}}</span>
+                  <a ng-if="!solicitud.anonymous" href="mailto:{{solicitud.email}}">{{solicitud.email}}</a> 
+                  <em ng-if="solicitud.anonymous">Anonymous</em> en <span>{{solicitud.date}}</span>
                 </footer>
               </blockquote>
               <blockquote>
@@ -189,7 +189,7 @@
           </div>
         </div>
           <!-- /solicitud -->
-           </div>
+        	</div>
       <!-- /ingeniero -->
     </div>
 
