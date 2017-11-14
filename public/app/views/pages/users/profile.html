@@ -109,7 +109,7 @@
           </div>
           <!-- /tabs -->
         </div>
-         <!-- solicitud -->
+        	<!-- solicitud -->
         <div ng-controller="SolicitudesController as sltsCtrl">
           <button class="btn btn-primary" ng-hide="sltsCtrl.show" ng-click="sltsCtrl.toggle()">Mostrar Solicitudes <span class="badge">{{sltsCtrl.solicitudes.length}}</span></button>
           <div class="panel panel-primary" ng-show="sltsCtrl.show">
@@ -119,25 +119,61 @@
             <div class="panel-body">
               <form class="form-horizontal" role="form">
                 <div class="form-group">
-                  <div class="col-sm-6">
-                    <textarea placeholder="Please tell us what you think about {{ingCtrl.ingeniero.name}}" class="form-control"></textarea>
+                  <strong class="col-sm-12">De:</strong>
+                  <div class="col-sm-4">
+                    <textarea ng-model="comment.nombre"placeholder="Ingrese Nombre Completo" class="form-control"></textarea>
                   </div>
                   <div class="col-sm-4">
-                    <input type="email" placeholder="Please enter your email address" class="form-control">
+                    <textarea ng-model="comment.ci"placeholder="C.I:" class="form-control"></textarea>
+                  </div>
+                   <div class="col-sm-4">
+                    <textarea ng-model="comment.facultad"placeholder="Facultad:" class="form-control"></textarea>
+                  </div>
+                  <div class="col-sm-4">
+                    <input ng-model="comment.email"type="email" placeholder="Please enter your email address" class="form-control">
                     <label>
-                      <input id="anonymous" type="checkbox">
-                      Anonymous
+                      <input ng-model="comment.anonymous" id="anonymous" type="checkbox">
+                      No mail
                     </label>
                   </div>
-                  <div class="col-sm-2">
-                    <button class="btn btn-lg">Solicitud</button>
                   </div>
+                  <div class="form-group">
+                     <strong class="col-sm-12">Para:</strong>
+                    <div class="col-sm-4">
+                      <textarea ng-model="comment.titulo"placeholder="Ingrese Titulo" class="form-control"></textarea>
+                    </div>
+                    <div class="col-sm-4">
+                      <textarea ng-model="comment.para"placeholder="Para:" class="form-control"></textarea>
+                    </div>
+                    <div class="col-sm-4">
+                      <textarea ng-model="comment.cargo"placeholder="Cargo:" class="form-control"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <strong class="col-sm-12">Motivo:</strong>
+                    <div class="col-sm-6">
+                      <textarea ng-model="comment.body"placeholder="Motivo Solicitud" class="form-control"></textarea>
+                    </div>
+                    <div class="col-sm-2">
+                      <button class="btn btn-lg">Solicitud</button>
+                    </div>
+                  </div>
+                    
                 </div>
               </form>
               <blockquote>
-                <p>Solicitud para una maestria en el exteior</p>
+                <p>{{comment.date}}</p>
+                <p>{{comment.titulo}}</p>
+                <p>{{comment.para}}</p>
+                <p>{{comment.cargo}}</p> 
+                <p>Presente.-</p> 
+                <p>Yo, {{comment.nombre}} con cédula de ciudadanía {{comment.ci}}, egresado de la carrera de {{comment.facultad}}, solicito a usted muy comedidamente se me {{comment.body}}</p> 
+                <p>Por la atención prestada al a presente, anticipo mis agradecimientos</p>
+                <p>Atentamente</p>
+                <p>{{comment.nombre}}</p> 
+                <p>{{comment.ci}}</p> 
                 <footer>
-                  Solicitud by <a href="mailto:pepe@pepe.com">pepe@pepe.com</a> on <span>Feb 12, 2016, 11:00:00 PM</span>
+                  Solicitud por <a href="mailto:{{comment.email}}">{{comment.email}}</a> on <span>{{comment.date}}</span>
                 </footer>
               </blockquote>
               <blockquote>
@@ -150,7 +186,8 @@
           </div>
         </div>
           <!-- /solicitud -->
-      </div>
+
+               </div>
       <!-- /ingeniero -->
     </div>
 
