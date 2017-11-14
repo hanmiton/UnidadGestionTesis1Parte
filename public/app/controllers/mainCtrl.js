@@ -254,6 +254,14 @@ angular.module('mainController',['authServices', 'userServices'])
 
   })
 
+.directive('ingenieroData', function () {
+    return {
+      restrict: 'E',
+      templateUrl: '../partials/ingeniero-data.html'
+    }
+  })
+
+
 .filter('imageify', function () {
     return function (input) {
       var url = "app/assets/img/ingenieros/" + input.toLowerCase() + ".jpg";

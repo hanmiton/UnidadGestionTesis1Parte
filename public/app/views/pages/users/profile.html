@@ -32,32 +32,7 @@
             <div class="tab-content">
             <!-- Ingenierias -->
               <div ng-show="tabs.tab === 1">
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <strong>Tipo</strong>
-                    <span class="pull-right">
-                      <span class="label type type-{{type | lowercase}}" ng-repeat="type in main.ingeniero.tipo">
-                        {{type}}
-                      </span>
-                    </span>
-                  </li>
-                  <li class="list-group-item">
-                    <strong>Edad</strong>
-                    <span class="pull-right">{{main.ingeniero.edad}}</span>
-                  </li>
-                  <li class="list-group-item">
-                    <strong>Facultad</strong>
-                    <span class="pull-right">{{main.ingeniero.facultad}}</span>
-                  </li>
-                  <li class="list-group-item">
-                    <strong>Habilidades</strong>
-                      <ul>
-                        <li ng-repeat="ability in main.ingeniero.habilidades">
-                          {{ability}}
-                        </li>
-                      </ul>
-                  </li>
-                </ul>
+                
               </div>
 				<!--Estadisticas-->
               <!-- Stats -->
@@ -124,16 +99,16 @@
                     <textarea ng-model="sltsCtrl.solicitud.nombre" placeholder="Ingrese Nombre Completo" class="form-control" required></textarea>
                   </div>
                   <div class="col-sm-4">
-                    <textarea ng-model="sltsCtrl.solicitud.ci"placeholder="C.I:" class="form-control"></textarea>
+                    <textarea ng-model="sltsCtrl.solicitud.ci"placeholder="C.I:" class="form-control" required></textarea>
                   </div>
                    <div class="col-sm-4">
-                    <textarea ng-model="sltsCtrl.solicitud.facultad"placeholder="Facultad:" class="form-control"></textarea>
+                    <textarea ng-model="sltsCtrl.solicitud.facultad"placeholder="Facultad:" class="form-control" required></textarea>
                   </div>
                   <div class="col-sm-4">
                     <label>
                       <input ng-model="sltsCtrl.solicitud.email" ng-disabled="sltsCtrl.solicitud.anonymous" type="email" placeholder="Ingresa tu direccion email" class="form-control" ng-required="!sltsCtrl.solicitud.anonymous">
                       <label>
-                        <input ng-model="sltsCtrl.solicitud.anonymous"ng-change="sltsCtrl.anonymousChanged()"type="checkbox">
+                        <input ng-model="sltsCtrl.solicitud.anonymous"ng-change="sltsCtrl.anonymousChanged()"   type="checkbox">
                         Anonymous
                     </label>
                   </div>
@@ -141,27 +116,28 @@
                   <div class="form-group">
                      <strong class="col-sm-12">Para:</strong>
                     <div class="col-sm-4">
-                      <textarea ng-model="sltsCtrl.solicitud.titulo"placeholder="Ingrese Titulo" class="form-control"></textarea>
+                      <textarea ng-model="sltsCtrl.solicitud.titulo"placeholder="Ingrese Titulo" class="form-control" required></textarea>
                     </div>
                     <div class="col-sm-4">
-                      <textarea ng-model="sltsCtrl.solicitud.para"placeholder="Para:" class="form-control"></textarea>
+                      <textarea ng-model="sltsCtrl.solicitud.para"placeholder="Para:" class="form-control" required></textarea>
                     </div>
                     <div class="col-sm-4">
-                      <textarea ng-model="sltsCtrl.solicitud.cargo"placeholder="Cargo:" class="form-control"></textarea>
+                      <textarea ng-model="sltsCtrl.solicitud.cargo"placeholder="Cargo:" class="form-control" required></textarea>
                     </div>
                   </div>
                   <div class="form-group">
                     <strong class="col-sm-12">Motivo:</strong>
                     <div class="col-sm-6">
-                      <textarea ng-model="sltsCtrl.solicitud.body"placeholder="Motivo Solicitud" class="form-control"></textarea>
+                      <textarea ng-model="sltsCtrl.solicitud.body"placeholder="Motivo Solicitud" class="form-control" required></textarea>
                     </div>
                     <div class="col-sm-2">
                       <button type="submit" class="btn btn-lg">Solicitud</button>
                     </div>
                   </div>
-                    <h2>Valid: {{solicitudesForm.$valid}}<h2>
                 </div>
               </form>
+              <div ng-if="!solicitudesForm.$valid" class="alert alert-danger">Solicitud Inválida</div>
+              <div ng-if="solicitudesForm.$valid" class="alert alert-success">Solicitud Valida</div>
               <blockquote>
                 <p>{{sltsCtrl.solicitud.date}}</p>
                 <p>{{sltsCtrl.solicitud.titulo}}</p>
@@ -201,7 +177,7 @@
           </div>
         </div>
           <!-- /solicitud -->
-        	</div>
+       </div>
       <!-- /ingeniero -->
     </div>
 

@@ -1,0 +1,26 @@
+<ul class="list-group">
+  <li class="list-group-item">
+    <strong>Tipo</strong>
+    <span class="pull-right">
+      <span class="label type type-{{type | lowercase}}" ng-repeat="type in main.ingeniero.tipo">
+        {{type}}
+      </span>
+    </span>
+  </li>
+  <li class="list-group-item">
+    <strong>Edad</strong>
+    <span class="pull-right">{{main.ingeniero.edad}}</span>
+  </li>
+  <li class="list-group-item">
+    <strong>Facultad</strong>
+    <span class="pull-right">{{main.ingeniero.facultad}}</span>
+  </li>
+  <li class="list-group-item">
+    <strong>Habilidades</strong>
+      <ul>
+        <li ng-repeat="ability in main.ingeniero.habilidades">
+          {{ability}}
+        </li>
+      </ul>
+  </li>
+</ul>
