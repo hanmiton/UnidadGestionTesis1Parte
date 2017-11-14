@@ -5,6 +5,117 @@
 	<div class="panel-heading" style="text-align:center;"><strong> User Profile</strong>		
 	</div>
 
+
+	<!--inge tesis union-->
+	
+
+     <div class="container">
+      <!-- ingeniero -->
+      <div>
+        <div class="page-header">
+          <h1>
+           {{main.ingeniero.name}} 
+            <small>{{main.ingeniero.ingenieria}}</small>
+            <span class="label label-primary pull-right">#{{main.ingeniero.id}}</span>
+          </h1>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <img class="avatar center-block" ng-src="app/assets/img/ingenieros/{{main.ingeniero.name | lowercase}}.png">
+          </div>
+          <div class="col-md-6" ng-controller="TabsController as tabs">
+            <ul class="nav nav-tabs nav-justified">
+               <li ng-class="{ active:tabs.tab === 1 }"><a href="#" ng-click="tabs.selectTab(1)">Ingenierias</a></li>
+              <li ng-class="{ active:tabs.tab === 2 }"><a href="#" ng-click="tabs.selectTab(2)">Estadisticas</a></li>
+              <li ng-class="{ active:tabs.tab === 3 }"><a href="#" ng-click="tabs.selectTab(3)">Evolucion</a></li>
+            </ul>
+            <div class="tab-content">
+            <!-- Ingenierias -->
+              <div ng-show="tabs.tab === 1">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <strong>Tipo</strong>
+                    <span class="pull-right">
+                      <span class="label type type-{{type | lowercase}}" ng-repeat="type in main.ingeniero.tipo">
+                        {{type}}
+                      </span>
+                    </span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Edad</strong>
+                    <span class="pull-right">{{main.ingeniero.edad}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Facultad</strong>
+                    <span class="pull-right">{{main.ingeniero.facultad}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Habilidades</strong>
+                      <ul>
+                        <li ng-repeat="ability in main.ingeniero.habilidades">
+                          {{ability}}
+                        </li>
+                      </ul>
+                  </li>
+                </ul>
+              </div>
+				<!--Estadisticas-->
+              <!-- Stats -->
+              <div ng-show="tabs.tab === 2">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <strong>Estadistica1</strong>
+                    <span class="badge">{{main.ingeniero.stats.st1}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Estadistica2</strong>
+                    <span class="badge">{{main.ingeniero.stats.st2}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Estadistica3</strong>
+                    <span class="badge">{{main.ingeniero.stats.st3}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Estadistica4</strong>
+                    <span class="badge">{{main.ingeniero.stats['sp.st4']}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Estadistica5</strong>
+                    <span class="badge">{{main.ingeniero.stats['sp.st5']}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Estadistica6</strong>
+                    <span class="badge">{{main.ingeniero.stats.st6}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Total</strong>
+                    <span class="badge">{{main.ingeniero.stats.total}}</span>
+                  </li>
+                </ul>
+              </div>
+               <!-- Evolucion -->
+              <div ng-show="tabs.tab === 3">
+                <div class="text-center" ng-repeat="ingeniero in main.ingeniero.evolution">
+                  <a href="#">
+                    <img src="app/assets/img/ingenieros/{{ingeniero | lowercase}}.jpg" width="160">
+                    <p>
+                      <strong>{{ingeniero}}</strong>
+                    </p>
+                  </a>
+                  <span ng-hide="$last" class="glyphicon glyphicon-arrow-down"></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- /ingeniero -->
+    </div>
+
+
+
+
 	<!-- Table -->
 	<table class= "table">
 		<tr>
